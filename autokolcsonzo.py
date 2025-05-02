@@ -32,7 +32,7 @@ class Autokolcsonzo:
                     print("Ez az autó már bérlés alatt áll.")
                     return False
                 self.berlesek.append(Berles(auto, napok))
-                self.ment_berleseket()  # MENTÉS!
+                self.ment_berleseket()
                 print(f"Bérlés sikeres! Az autó {napok} napra van bérelve.")
                 return True
         print("Az autó nem található.")
@@ -42,7 +42,7 @@ class Autokolcsonzo:
         for berles in self.berlesek:
             if berles.auto.rendszam == rendszam:
                 self.berlesek.remove(berles)
-                self.ment_berleseket()  # MENTÉS!
+                self.ment_berleseket()
                 print("Bérlés lemondva.")
                 return True
         print("Nincs ilyen bérlés.")
@@ -106,3 +106,18 @@ class Autokolcsonzo:
                         self.berlesek.append(Berles(auto, int(napok)))
         except FileNotFoundError:
             pass
+
+    def auto_eltavolitasa(self, rendszam):
+        auto = next((a for a in self.autok if a.rendszam == rendszam), None)
+        if not auto:
+            print("Nincs ilyen rendszámú autó.")
+            return False
+
+        if any(b.auto.rendszam == rendszam for b in self.berlesek):
+            print("Ez az autó jelenleg bérlés alatt áll, nem távolítható el.")
+        return False
+
+        self.autok.remove(auto)
+        self.ment_autokat()
+        print("Autó sikeresen eltávolítva.")
+        return True

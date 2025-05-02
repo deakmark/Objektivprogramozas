@@ -1,7 +1,7 @@
 class Berles:
     def __init__(self, auto, napok):
-        self.auto = auto  # Az autó objektum
-        self.napok = napok  # Bérlés napjainak száma
+        self.auto = auto 
+        self.napok = napok 
 
     def get_osszeg(self):
         return self.auto.berleti_dij
@@ -9,7 +9,7 @@ class Berles:
     def __str__(self):
         return f"{self.auto.rendszam} bérlése {self.datum} napra, Ár: {self.get_osszeg()} Ft"
     
-    
+
 def auto_berlese(self, rendszam, napok):
     for auto in self.autok:
         if auto.rendszam == rendszam:

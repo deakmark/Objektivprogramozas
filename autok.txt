@@ -1,0 +1,5 @@
+szemely,QLV-451,Audi A4,10000
+szemely,ABC-123, "Opel Astra", 10000
+teher,XYZ-987, "Ford Transit", 15000
+szemely,QWE-456, "Suzuki Swift", 9000
+szemely,RRR-123", "Fiat Punto", 6000

@@ -21,6 +21,7 @@ def main():
         print("3. Bérlések listázása")
         print("4. Új autó hozzáadása")
         print("5. Elérhető autók listázása")
+        print("6. Autó eltávolítása")
         print("0. Kilépés")
 
         valasztas = input("Választás: ")
@@ -64,6 +65,9 @@ def main():
                 print("Nincs jogosultsága autó hozzáadására.")
         elif valasztas == "5":
             kolcsonzo.elerheto_autok()
+        elif valasztas == "6":
+            rendszam = input("Adja meg az eltávolítandó autó rendszámát: ")
+            kolcsonzo.auto_eltavolitasa(rendszam)
         elif valasztas == "0":
             break
         else:
